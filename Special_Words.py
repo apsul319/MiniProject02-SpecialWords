@@ -26,4 +26,4 @@ def strippedText(text):
 
 for line in textLines:
     word = parseWord("", strippedText(line.strip().lower()))
-    print(f"\nOriginal Word: {line.strip()}\nEarliest Alphabetical Special Word: {word}\nLength: {len(word)}")
+    print(f"\nOriginal Word: {line.strip()}\nEarliest Largest Alphabetical Word: {word}\nLength: {len(word)}")
