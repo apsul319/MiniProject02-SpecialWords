@@ -1,3 +1,5 @@
+from os import stat_result
+from token import STAR
 from tracemalloc import start
 
 reader = open('problem.txt', 'r')
@@ -15,6 +17,13 @@ def parseWord(startLetters, word):
             stored = temp
     return stored
 
+def strippedText(text):
+    newWord = ""
+    for letter in str(text):
+        if letter.upper() != letter.lower():
+            newWord += letter
+    return newWord
+
 for line in textLines:
-    word = parseWord("", line.strip())
-    print(f"\nOriginal Word: {line.strip()}\nLargest Special Word(s): {word}\nLength: {len(word)}")
+    word = parseWord("", strippedText(line.strip().lower()))
+    print(f"\nOriginal Word: {line.strip()}\nEarliest Largest Special Word: {word}\nLength: {len(word)}")
